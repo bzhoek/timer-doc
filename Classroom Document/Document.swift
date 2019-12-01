@@ -1,11 +1,3 @@
-//
-//  Document.swift
-//  Classroom Document
-//
-//  Created by Bas van der Hoek on 30/11/2019.
-//  Copyright © 2019 Zilverline. All rights reserved.
-//
-
 import Cocoa
 
 class Document: NSDocument {
