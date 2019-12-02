@@ -2,6 +2,8 @@ import Cocoa
 
 class Document: NSDocument {
 
+  var countDown = 0
+  
   override init() {
       super.init()
     // Add your subclass-specific initialization here.
