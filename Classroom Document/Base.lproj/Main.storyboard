@@ -686,7 +686,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController storyboardIdentifier="Document Window Controller" id="jGA-0Y-lOj" customClass="WindowController" customModule="Classroom_Document" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" titleVisibility="hidden" id="Ckk-yw-fiv">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" titleVisibility="hidden" id="Ckk-yw-fiv" customClass="Window" customModule="Classroom_Document" customModuleProvider="target">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
@@ -706,13 +706,9 @@
                                 </sliderAccessory>
                                 <slider key="slider" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wVJ-pH-6Fv">
                                     <rect key="frame" x="0.0" y="0.0" width="685" height="30"/>
-                                    <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="4B8-NR-cYu">
-                                        <connections>
-                                            <binding destination="jGA-0Y-lOj" name="value" keyPath="baz" id="WGK-0o-Y3a"/>
-                                        </connections>
-                                    </sliderCell>
+                                    <sliderCell key="cell" continuous="YES" state="on" userInterfaceLayoutDirection="rightToLeft" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="4B8-NR-cYu"/>
                                     <connections>
-                                        <binding destination="jGA-0Y-lOj" name="value" keyPath="bar" id="i3i-gG-jaV"/>
+                                        <binding destination="jGA-0Y-lOj" name="value" keyPath="self.window.foo" id="Qbh-3h-oxw"/>
                                     </connections>
                                 </slider>
                             </sliderTouchBarItem>
@@ -746,7 +742,10 @@
                             <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oAu-sB-Cj7">
                                 <rect key="frame" x="18" y="18" width="444" height="19"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <sliderCell key="cell" state="on" userInterfaceLayoutDirection="rightToLeft" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="i9a-v2-hDm"/>
+                                <sliderCell key="cell" continuous="YES" state="on" userInterfaceLayoutDirection="rightToLeft" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="i9a-v2-hDm"/>
+                                <connections>
+                                    <binding destination="5gI-5U-AMq" name="value" keyPath="self.view.window.foo" id="v4d-Gg-4sd"/>
+                                </connections>
                             </slider>
                         </subviews>
                         <constraints>

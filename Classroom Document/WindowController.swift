@@ -1,9 +1,8 @@
 import Cocoa
 
 class WindowController: NSWindowController {
-  @objc dynamic var bar = 0
   
-  @objc dynamic var baz: Int {
+  @objc dynamic var bar: Int {
     get {
       if let document = self.document as? Document {
         return document.countDown

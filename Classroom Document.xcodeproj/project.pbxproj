@@ -13,6 +13,7 @@
 		49DCC99B2392CBB600E19FAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49DCC99A2392CBB600E19FAD /* Assets.xcassets */; };
 		49DCC99E2392CBB600E19FAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DCC99C2392CBB600E19FAD /* Main.storyboard */; };
 		49DCC9A72392CFF700E19FAD /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DCC9A62392CFF700E19FAD /* WindowController.swift */; };
+		49DCC9A9239542A500E19FAD /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DCC9A8239542A500E19FAD /* Window.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		49DCC99F2392CBB600E19FAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49DCC9A02392CBB600E19FAD /* Classroom_Document.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Classroom_Document.entitlements; sourceTree = "<group>"; };
 		49DCC9A62392CFF700E19FAD /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
+		49DCC9A8239542A500E19FAD /* Window.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 			children = (
 				49DCC9942392CBB200E19FAD /* AppDelegate.swift */,
 				49DCC9962392CBB200E19FAD /* ViewController.swift */,
+				49DCC9A8239542A500E19FAD /* Window.swift */,
 				49DCC9982392CBB300E19FAD /* Document.swift */,
 				49DCC99A2392CBB600E19FAD /* Assets.xcassets */,
 				49DCC99C2392CBB600E19FAD /* Main.storyboard */,
@@ -140,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49DCC9972392CBB200E19FAD /* ViewController.swift in Sources */,
+				49DCC9A9239542A500E19FAD /* Window.swift in Sources */,
 				49DCC9A72392CFF700E19FAD /* WindowController.swift in Sources */,
 				49DCC9952392CBB200E19FAD /* AppDelegate.swift in Sources */,
 				49DCC9992392CBB300E19FAD /* Document.swift in Sources */,
