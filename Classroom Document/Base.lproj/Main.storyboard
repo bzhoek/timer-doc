@@ -690,7 +690,7 @@
                         <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
-                        <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
                         <connections>
                             <outlet property="delegate" destination="jGA-0Y-lOj" id="98r-iN-zZc"/>
                         </connections>
@@ -727,7 +727,7 @@
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <viewController id="5gI-5U-AMq" customClass="ViewController" customModule="Classroom_Document" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="ERx-hH-rdd">
+                    <view key="view" focusRingType="none" id="ERx-hH-rdd">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
@@ -757,6 +757,50 @@
                 <customObject id="2Tp-Fl-jBw" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="655"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="2Rg-x7-Zfi">
+            <objects>
+                <windowController storyboardIdentifier="screenShotPanel" id="8vO-ak-SGn" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titleVisibility="hidden" id="ZIM-Wj-a2Y" customClass="NSPanel">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" utility="YES" nonactivatingPanel="YES" HUD="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="425" y="461" width="120" height="80"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+                        <connections>
+                            <outlet property="delegate" destination="8vO-ak-SGn" id="8hs-I1-9dC"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="y5Y-gx-uPv" kind="relationship" relationship="window.shadowedContentViewController" id="za0-7e-XVE"/>
+                    </connections>
+                </windowController>
+                <customObject id="MeA-I9-gH9" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="474" y="155"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="1LI-kD-Exi">
+            <objects>
+                <customObject id="C2M-AM-k2Q" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <viewController id="y5Y-gx-uPv" sceneMemberID="viewController">
+                    <view key="view" id="fc5-sd-xxa">
+                        <rect key="frame" x="0.0" y="0.0" width="120" height="80"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Aq-JY-IL2">
+                                <rect key="frame" x="16" y="22" width="89" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Capture" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6lJ-X9-TKQ">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="474" y="384"/>
         </scene>
     </scenes>
 </document>

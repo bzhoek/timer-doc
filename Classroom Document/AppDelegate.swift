@@ -4,7 +4,14 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
   func applicationDidFinishLaunching(_ aNotification: Notification) {
-    // Insert code here to initialize your application
+    showCapturePanel()
+  }
+
+  private func showCapturePanel() {
+    let storyboard = NSStoryboard(name: "Main", bundle: nil)
+    let controller: NSWindowController = storyboard.instantiateController(withIdentifier: "screenShotPanel") as! NSWindowController
+    controller.window?.level = .popUpMenu
+    controller.showWindow(nil)
   }
 
   func applicationWillTerminate(_ aNotification: Notification) {
