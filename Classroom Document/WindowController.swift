@@ -1,7 +1,7 @@
 import Cocoa
 
 class WindowController: NSWindowController {
-  
+
   @objc dynamic var bar: Int {
     get {
       if let document = self.document as? Document {
