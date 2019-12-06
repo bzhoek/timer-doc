@@ -706,6 +706,7 @@
                                 </sliderAccessory>
                                 <slider key="slider" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wVJ-pH-6Fv">
                                     <rect key="frame" x="0.0" y="0.0" width="685" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <sliderCell key="cell" continuous="YES" state="on" userInterfaceLayoutDirection="rightToLeft" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="4B8-NR-cYu"/>
                                     <connections>
                                         <binding destination="jGA-0Y-lOj" name="value" keyPath="self.window.foo" id="Qbh-3h-oxw"/>
@@ -758,10 +759,10 @@
             </objects>
             <point key="canvasLocation" x="75" y="655"/>
         </scene>
-        <!--Window Controller-->
+        <!--Screenshot Panel-->
         <scene sceneID="2Rg-x7-Zfi">
             <objects>
-                <windowController storyboardIdentifier="screenShotPanel" id="8vO-ak-SGn" sceneMemberID="viewController">
+                <windowController storyboardIdentifier="screenShotPanel" id="8vO-ak-SGn" userLabel="Screenshot Panel" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titleVisibility="hidden" id="ZIM-Wj-a2Y" customClass="NSPanel">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" utility="YES" nonactivatingPanel="YES" HUD="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -779,11 +780,59 @@
             </objects>
             <point key="canvasLocation" x="474" y="155"/>
         </scene>
-        <!--View Controller-->
+        <!--Window Controller-->
+        <scene sceneID="CR1-4v-MYi">
+            <objects>
+                <windowController storyboardIdentifier="countDownPanel" id="iXa-hd-hYI" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="NLs-Mn-arx" customClass="NSPanel">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" utility="YES" nonactivatingPanel="YES" HUD="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="425" y="461" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+                        <connections>
+                            <outlet property="delegate" destination="iXa-hd-hYI" id="tsd-Ul-pjd"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="pdm-Lv-LoI" kind="relationship" relationship="window.shadowedContentViewController" id="ES7-fF-JiI"/>
+                    </connections>
+                </windowController>
+                <customObject id="Pzy-iH-SYz" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="866" y="250"/>
+        </scene>
+        <!--Count Down View Controller-->
+        <scene sceneID="5Jv-4b-8PW">
+            <objects>
+                <viewController id="pdm-Lv-LoI" customClass="CountDownViewController" customModule="Classroom_Document" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="Om0-On-BHD">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gdQ-ga-011">
+                                <rect key="frame" x="-2" y="65" width="484" height="140"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="16:20:00" id="AjV-sB-dBF">
+                                    <font key="font" size="120" name="HelveticaNeue"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="gdQ-ga-011" id="0HR-Ms-Ok9"/>
+                    </connections>
+                </viewController>
+                <customObject id="bc6-Te-8e1" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="866" y="658"/>
+        </scene>
+        <!--Screenshot View-->
         <scene sceneID="1LI-kD-Exi">
             <objects>
                 <customObject id="C2M-AM-k2Q" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <viewController id="y5Y-gx-uPv" sceneMemberID="viewController">
+                <viewController id="y5Y-gx-uPv" userLabel="Screenshot View" sceneMemberID="viewController">
                     <view key="view" id="fc5-sd-xxa">
                         <rect key="frame" x="0.0" y="0.0" width="120" height="80"/>
                         <autoresizingMask key="autoresizingMask"/>

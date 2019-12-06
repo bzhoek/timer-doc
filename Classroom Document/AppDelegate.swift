@@ -4,12 +4,13 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
   func applicationDidFinishLaunching(_ aNotification: Notification) {
-    showCapturePanel()
+    showCapturePanel("screenShotPanel")
+    showCapturePanel("countDownPanel")
   }
 
-  private func showCapturePanel() {
+  private func showCapturePanel(_ identifier: String) {
     let storyboard = NSStoryboard(name: "Main", bundle: nil)
-    let controller: NSWindowController = storyboard.instantiateController(withIdentifier: "screenShotPanel") as! NSWindowController
+    let controller: NSWindowController = storyboard.instantiateController(withIdentifier: identifier) as! NSWindowController
     controller.window?.level = .popUpMenu
     controller.showWindow(nil)
   }
