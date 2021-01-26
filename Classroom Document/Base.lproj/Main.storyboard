@@ -706,7 +706,6 @@
                                 </sliderAccessory>
                                 <slider key="slider" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wVJ-pH-6Fv">
                                     <rect key="frame" x="0.0" y="0.0" width="685" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <sliderCell key="cell" continuous="YES" state="on" userInterfaceLayoutDirection="rightToLeft" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="4B8-NR-cYu"/>
                                     <connections>
                                         <binding destination="jGA-0Y-lOj" name="value" keyPath="self.window.foo" id="Qbh-3h-oxw"/>
@@ -780,12 +779,12 @@
             </objects>
             <point key="canvasLocation" x="474" y="155"/>
         </scene>
-        <!--Window Controller-->
+        <!--Timer Window Controller-->
         <scene sceneID="CR1-4v-MYi">
             <objects>
-                <windowController storyboardIdentifier="countDownPanel" id="iXa-hd-hYI" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="NLs-Mn-arx" customClass="NSPanel">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" utility="YES" nonactivatingPanel="YES" HUD="YES"/>
+                <windowController storyboardIdentifier="countDownPanel" id="iXa-hd-hYI" userLabel="Timer Window Controller" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="NLs-Mn-arx" customClass="TimerPanel" customModule="Classroom_Document" customModuleProvider="target">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" resizable="YES" utility="YES" nonactivatingPanel="YES" HUD="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="425" y="461" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
@@ -793,6 +792,25 @@
                             <outlet property="delegate" destination="iXa-hd-hYI" id="tsd-Ul-pjd"/>
                         </connections>
                     </window>
+                    <touchBar key="touchBar" id="Rf7-eu-Jqz">
+                        <touchBarItems>
+                            <sliderTouchBarItem id="XA2-V9-Hhz">
+                                <sliderAccessory key="minimumValueAccessory" id="acu-LS-Ri9">
+                                    <sliderAccessoryBehavior key="behavior" id="bfE-Jk-jmR"/>
+                                </sliderAccessory>
+                                <sliderAccessory key="maximumValueAccessory" id="4fn-rU-66C">
+                                    <sliderAccessoryBehavior key="behavior" id="HjJ-qM-ner"/>
+                                </sliderAccessory>
+                                <slider key="slider" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yPu-05-UuJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="76" height="30"/>
+                                    <sliderCell key="cell" state="on" userInterfaceLayoutDirection="rightToLeft" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="o71-0U-Zy1"/>
+                                    <connections>
+                                        <binding destination="iXa-hd-hYI" name="value" keyPath="self.window.countDown" id="mT7-M4-Pnh"/>
+                                    </connections>
+                                </slider>
+                            </sliderTouchBarItem>
+                        </touchBarItems>
+                    </touchBar>
                     <connections>
                         <segue destination="pdm-Lv-LoI" kind="relationship" relationship="window.shadowedContentViewController" id="ES7-fF-JiI"/>
                     </connections>
@@ -801,23 +819,54 @@
             </objects>
             <point key="canvasLocation" x="866" y="250"/>
         </scene>
-        <!--Count Down View Controller-->
+        <!--Timer View Controller-->
         <scene sceneID="5Jv-4b-8PW">
             <objects>
-                <viewController id="pdm-Lv-LoI" customClass="CountDownViewController" customModule="Classroom_Document" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="pdm-Lv-LoI" userLabel="Timer View Controller" customClass="CountDownViewController" customModule="Classroom_Document" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="Om0-On-BHD">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gdQ-ga-011">
-                                <rect key="frame" x="-2" y="65" width="484" height="140"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="16:20:00" id="AjV-sB-dBF">
-                                    <font key="font" size="120" name="HelveticaNeue"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
+                            <tabView focusRingType="none" fixedFrame="YES" drawsBackground="NO" allowsTruncatedLabels="NO" initialItem="l7M-qY-J4d" translatesAutoresizingMaskIntoConstraints="NO" id="8bq-a7-tPT">
+                                <rect key="frame" x="-8" y="-10" width="496" height="286"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <font key="font" metaFont="system"/>
+                                <tabViewItems>
+                                    <tabViewItem label="Clock" identifier="" id="l7M-qY-J4d" userLabel="Clock">
+                                        <view key="view" focusRingType="none" ambiguous="YES" id="mws-7X-czL">
+                                            <rect key="frame" x="10" y="33" width="476" height="240"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gdQ-ga-011">
+                                                    <rect key="frame" x="-12" y="41" width="484" height="140"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="16:20:00" id="AjV-sB-dBF">
+                                                        <font key="font" size="120" name="HelveticaNeue"/>
+                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
+                                            </subviews>
+                                        </view>
+                                    </tabViewItem>
+                                    <tabViewItem label="Timer" identifier="" id="Nym-zW-jD2" userLabel="Timer">
+                                        <view key="view" focusRingType="none" id="rmq-cD-00F">
+                                            <rect key="frame" x="10" y="33" width="476" height="240"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gs1-08-WrE">
+                                                    <rect key="frame" x="197" y="111" width="81" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="BWS-jr-MiN">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                </button>
+                                            </subviews>
+                                        </view>
+                                    </tabViewItem>
+                                </tabViewItems>
+                            </tabView>
                         </subviews>
                     </view>
                     <connections>
@@ -826,7 +875,7 @@
                 </viewController>
                 <customObject id="bc6-Te-8e1" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="866" y="658"/>
+            <point key="canvasLocation" x="866" y="712"/>
         </scene>
         <!--Screenshot View-->
         <scene sceneID="1LI-kD-Exi">

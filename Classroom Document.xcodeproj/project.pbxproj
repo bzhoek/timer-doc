@@ -18,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		17C14A93A44A4244B6EF2E58 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		49BC0608239A900D0098C560 /* CountDownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownViewController.swift; sourceTree = "<group>"; };
 		49DCC9912392CBB200E19FAD /* Classroom Document.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Classroom Document.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DCC9942392CBB200E19FAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +48,7 @@
 			children = (
 				49DCC9932392CBB200E19FAD /* Classroom Document */,
 				49DCC9922392CBB200E19FAD /* Products */,
+				17C14A93A44A4244B6EF2E58 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
